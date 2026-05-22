@@ -102,10 +102,10 @@ OpenAI reported the same thing with Codex: in a well-harnessed repository, the s
                                               harness governs every step:
                                               |
                                               +--> Instructions: what to do, in what order
-                                              +--> Scope:       one feature at a time, no overreach
-                                              +--> State:       progress log, feature list, git history
+                                              +--> Scope:        one feature at a time, no overreach
+                                              +--> State:        progress log, feature list, git history
                                               +--> Verification: tests, lint, type-check, smoke runs
-                                              +--> Lifecycle:   init at start, clean state at end
+                                              +--> Lifecycle:    init at start, clean state at end
                                               |
                                               v
                                          Agent stops only when
@@ -121,28 +121,28 @@ Harness engineering is about building a complete working environment around the 
 A harness has five subsystems:
 
 ```text
-    ┌─────────────────────────────────────────────────────────────────┐
-    │                        THE HARNESS                              │
-    │                                                                 │
-    │   ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐  │
-    │   │ Instructions │  │    State     │  │   Verification       │  │
-    │   │              │  │              │  │                      │  │
-    │   │ AGENTS.md    │  │ progress.md  │  │ tests + lint         │  │
-    │   │ CLAUDE.md    │  │ feature_list │  │ type-check           │  │
-    │   │ feature_list │  │ git log      │  │ smoke runs           │  │
-    │   │ docs/        │  │ session hand │  │ e2e pipeline         │  │
-    │   └──────────────┘  └──────────────┘  └──────────────────────┘  │
-    │                                                                 │
-    │   ┌──────────────┐  ┌──────────────────────────────────────┐    │
-    │   │    Scope     │  │         Session Lifecycle            │    │
-    │   │              │  │                                      │    │
-    │   │ one feature  │  │ init.sh at start                     │    │
-    │   │ at a time    │  │ clean-state checklist at end         │    │
-    │   │ definition   │  │ handoff note for next session        │    │
-    │   │ of done      │  │ commit only when safe to resume      │    │
-    │   └──────────────┘  └──────────────────────────────────────┘    │
-    │                                                                 │
-    └─────────────────────────────────────────────────────────────────┘
+    ┌────────────────────────────────────────────────────────────────┐
+    │                          THE HARNESS                           │
+    │                                                                │
+    │   ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐   │
+    │   │ Instructions │  │    State     │  │   Verification     │   │
+    │   │              │  │              │  │                    │   │
+    │   │ AGENTS.md    │  │ progress.md  │  │ tests + lint       │   │
+    │   │ CLAUDE.md    │  │ feature_list │  │ type-check         │   │
+    │   │ feature_list │  │ git log      │  │ smoke runs         │   │
+    │   │ docs/        │  │ session hand │  │ e2e pipeline       │   │
+    │   └──────────────┘  └──────────────┘  └────────────────────┘   │
+    │                                                                │
+    │   ┌──────────────┐  ┌──────────────────────────────────────┐   │
+    │   │    Scope     │  │         Session Lifecycle            │   │
+    │   │              │  │                                      │   │
+    │   │ one feature  │  │ init.sh at start                     │   │
+    │   │ at a time    │  │ clean-state checklist at end         │   │
+    │   │ definition   │  │ handoff note for next session        │   │
+    │   │ of done      │  │ commit only when safe to resume      │   │
+    │   └──────────────┘  └──────────────────────────────────────┘   │
+    │                                                                │
+    └────────────────────────────────────────────────────────────────┘
 
     The MODEL decides what code to write.
     The HARNESS governs when, where, and how it writes it.
@@ -234,7 +234,7 @@ All six course projects revolve around the same product: **an Electron-based per
 
 ```text
     ┌─────────────────────────────────────────────────────┐
-    │               Knowledge Base Desktop App            │
+    │             Knowledge Base Desktop App              │
     │                                                     │
     │  ┌──────────────┐  ┌──────────────────────────────┐ │
     │  │ Document List│  │       Q&A Panel              │ │
@@ -275,8 +275,8 @@ The course is designed to be done in order. Each phase builds on the last.
     L01  Strong models ≠ reliable         L03  Repository as single
          execution                              source of truth
     L02  What harness actually means
-                                         L04  Split instructions across
-         |                                    files, not one giant file
+                                          L04  Split instructions across
+         |                                     files, not one giant file
          v
     P01  Prompt-only vs.                       |
          rules-first comparison                v
@@ -284,7 +284,7 @@ The course is designed to be done in order. Each phase builds on the last.
 
 
     Phase 3: CONNECT SESSIONS             Phase 4: FEEDBACK & SCOPE
-    ==========================           =========================
+    ==========================            =========================
 
     L05  Keep context alive               L07  Draw clear task boundaries
          across sessions
@@ -308,7 +308,7 @@ The course is designed to be done in order. Each phase builds on the last.
 
          |                                     |
          v                                     v
-    P05  Agent verifies its own work       P06  Build a complete harness
+    P05  Agent verifies its own work      P06  Build a complete harness
                                                (capstone project)
 ```
 
